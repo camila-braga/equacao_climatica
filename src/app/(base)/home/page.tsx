@@ -38,7 +38,7 @@ export default function Home() {
           <p style={{ }}>Paulo Artaxo</p>
         </div>
       </div>
-      <div className="relative h-120 bg-blue-200">Div 3</div>
+      <div className="relative h-120 bg-blue-200">teste</div>
       <div className="relative h-120 bg-yellow-200">Div 4</div>
       <div className="relative h-120 bg-purple-200">Div 5</div>
       <div className="relative h-120 bg-pink-200">Div 6</div>
