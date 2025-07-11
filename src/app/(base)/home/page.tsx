@@ -64,7 +64,7 @@ export default function Home() {
         </div>
         <div className="w-1/3 h-full flex flex-col justify-center items-center text-center gap-4">
           <div className="max-w-[400px] flex flex-col gap-5">
-            <p className="text-[1.5em] text-[#89212F] font-bold">
+            <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               O MANIFESTO
             </p>
             <p className="text-[1.1em]">
@@ -82,7 +82,7 @@ export default function Home() {
       <div className="relative h-120 flex flex-row gap-6 mb-22">
         <div className="w-1/3 h-full flex flex-col justify-center items-center text-center gap-4">
           <div className="max-w-[400px] flex flex-col gap-5">
-            <p className="text-[1.5em] text-[#89212F] font-bold">
+            <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               OS MÉTODOS
             </p>
             <p className="text-[1.1em]">
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
         <div className="w-1/3 h-full flex flex-col justify-center items-center text-center gap-4">
           <div className="max-w-[400px] flex flex-col gap-5">
-            <p className="text-[1.5em] text-[#89212F] font-bold">
+            <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               O DASHBOARD
             </p>
             <p className="text-[1.1em]">
@@ -132,7 +132,7 @@ export default function Home() {
       <div className="relative h-120 flex flex-row gap-6 mb-22">
         <div className="w-1/3 h-full flex flex-col justify-center items-center text-center gap-4">
           <div className="max-w-[400px] flex flex-col gap-5">
-            <p className="text-[1.5em] text-[#89212F] font-bold">
+            <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               A EQUIPE
             </p>
             <p className="text-[1.1em]">
