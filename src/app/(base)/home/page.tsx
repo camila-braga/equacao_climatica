@@ -41,7 +41,7 @@ export default function Home() {
           <p className="text-[1.5em] text-[#89212F] mb-6 mt-12">
             NÃO HÁ RIQUEZA EM UM PLANETA MORTO
           </p>
-          <p className="text-[1.1em] px-24 mb-6">
+          <p className="text-[1.1em] px-24 mb-6 indent-18" style={{ textAlign: "justify" }}>
             As emissões de CO₂ não são apenas números — são alertas sobre o nosso futuro. Para conscientizar o máximo de pessoas, foi criado o projeto Equação Climática que reúne dados científicos e projeções cuidadosamente executadas para mostrar como as emissões de CO₂ impactam o planeta ao longo das próximas décadas. Aqui, você encontrará análises, gráficos e informações essenciais que ajudam a compreender os riscos, antecipar cenários, exigir medidas preventivas e corretivas eficientes do Governo e agir com responsabilidade diante da crise climática.
           </p>
           <p className="text-[1.1em] text-[#C63230]">
@@ -67,10 +67,10 @@ export default function Home() {
             <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               O MANIFESTO
             </p>
-            <p className="text-[1.1em]">
+            <p className="text-[1.1em] indent-10" style={{ textAlign: "justify" }}>
               Precisamos RESPIRAR. Precisamos VIVER. Este manifesto é um chamado à consciência: se continuarmos no ritmo atual, enfrentaremos eventos climáticos extremos, perda de biodiversidade e crises humanitárias sem precedentes.
             </p>
-            <p className="text-[1.1em] text-[#C63230] mb-6">
+            <p className="text-[1.1em] text-[#C63230] mb-6 indent-10" style={{ textAlign: "justify" }}>
               Ainda há tempo para agir, mas tem que ser agora. O tempo não espera.
             </p>
             <CustomButton label="Acessar" href="/manifesto" />
@@ -85,10 +85,10 @@ export default function Home() {
             <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               OS MÉTODOS
             </p>
-            <p className="text-[1.1em]">
-              Por trás de cada projeção climática, há modelos matemáticos que traduzem dados em futuros possíveis e imediatos. Nesta seção, explore como são feitas as análises que nos mostram para onde nossas ações irão nos levar.
+            <p className="text-[1.1em] indent-10" style={{ textAlign: "justify" }}>
+              Por trás de cada projeção climática, há modelos matemáticos que traduzem dados em futuros possíveis e imediatos. Descubra como são feitas as análises que nos mostram para onde nossas ações irão nos levar.
             </p>
-            <p className="text-[1.1em] text-[#C63230] mb-6">
+            <p className="text-[1.1em] text-[#C63230] mb-6 indent-10" style={{ textAlign: "justify" }}>
               Cada método é um alerta. Cada gráfico, um chamado à ação.
             </p>
             <CustomButton label="Acessar" href="/metodos" />
@@ -117,10 +117,10 @@ export default function Home() {
             <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               O DASHBOARD
             </p>
-            <p className="text-[1.1em]">
-              Os números contam a história que a humanidade ainda insiste em ignorar. Explore, nesta seção, dados reais que revelam o aumento das emissões de CO₂ e seus impactos. Visualize o futuro. Questione o presente.
+            <p className="text-[1.1em] indent-10" style={{ textAlign: "justify" }}>
+              Os números contam a história que a humanidade ainda insiste em ignorar. Explore dados reais que revelam o aumento das emissões de CO₂ e seus impactos. Visualize o futuro. Questione o presente.
             </p>
-            <p className="text-[1.1em] text-[#C63230] mb-6">
+            <p className="text-[1.1em] text-[#C63230] mb-6 indent-10" style={{ textAlign: "justify" }}>
               O futuro está em cada linha que sobe e o momento de agir é agora.
             </p>
             <CustomButton label="Acessar" href="/dashboard" />
@@ -135,10 +135,10 @@ export default function Home() {
             <p className={`text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               A EQUIPE
             </p>
-            <p className="text-[1.1em]">
-              Somos cidadãos comprometidos com a verdade climática. Trabalhamos para transformar dados em alertas e conhecimento em esperança. Juntos, podemos fazer a diferença.
+            <p className="text-[1.1em] indent-10" style={{ textAlign: "justify" }}>
+              Somos cidadãos comprometidos com a verdade climática e trabalhamos para transformar dados em alertas e conhecimento em esperança. Juntos, podemos fazer a diferença.
             </p>
-            <p className="text-[1.1em] text-[#C63230] mb-6">
+            <p className="text-[1.1em] text-[#C63230] mb-6 indent-10" style={{ textAlign: "justify" }}>
               Porque enfrentar a crise climática é uma tarefa coletiva — e começa com quem se importa.
               
             </p>
