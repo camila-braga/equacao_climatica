@@ -30,7 +30,7 @@ export default function Abertura() {
       {/* Container sobre a imagem de fundo */}
       <div className="flex-4/5 w-full flex justify-end pt-24">
         <div className="max-w-[90%] text-[clamp(2rem,6vw,5rem)] leading-tight text-black font-bold text-left flex flex-col gap-6 pr-4 sm:pr-10 bg-white p-4 rounded-xl">
-          <div>
+          <div className="select-none">
             O{" "}
             <span style={{ color: "#C63230", fontWeight: "700" }}>
               Perigo
