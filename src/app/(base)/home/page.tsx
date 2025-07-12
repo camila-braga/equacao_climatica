@@ -14,7 +14,7 @@ const josefinSans = Josefin_Sans({
 
 export default function Home() {
   return (
-    <main className={`w-screen flex flex-col ${josefinSans.className}`}>
+    <main className={`w-full flex flex-col ${josefinSans.className}`}>
       {/* Cabeçalho*/}
       <div className="relative h-120 ${iceberg.className}">
         <img
