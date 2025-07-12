@@ -71,7 +71,7 @@ export default function Home() {
               Precisamos RESPIRAR. Precisamos VIVER. Este manifesto é um chamado à consciência: se continuarmos no ritmo atual, enfrentaremos eventos climáticos extremos, perda de biodiversidade e crises humanitárias sem precedentes.
             </p>
             <p className="text-[1.1em] text-[#C63230] mb-6">
-              Ainda há tempo para agir, mas tem que ser agora. O tempo é cruel e não espera.
+              Ainda há tempo para agir, mas tem que ser agora. O tempo não espera.
             </p>
             <CustomButton label="Acessar" href="/manifesto" />
           </div>
@@ -136,7 +136,7 @@ export default function Home() {
               A EQUIPE
             </p>
             <p className="text-[1.1em]">
-              Somos desenvolvedores e cidadãos comprometidos com a verdade climática. Trabalhamos para transformar dados em alertas e conhecimento em esperança. Juntos, podemos fazer a diferença.
+              Somos cidadãos comprometidos com a verdade climática. Trabalhamos para transformar dados em alertas e conhecimento em esperança. Juntos, podemos fazer a diferença.
             </p>
             <p className="text-[1.1em] text-[#C63230] mb-6">
               Porque enfrentar a crise climática é uma tarefa coletiva — e começa com quem se importa.
