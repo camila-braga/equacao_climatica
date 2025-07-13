@@ -22,159 +22,159 @@ export default function Manifesto() {
   return (
     <main className={`w-full flex flex-col ${josefinSans.className}`}>
       {/* Cabeçalho */}
-      <div className={`relative h-95 ${iceberg.className}`}>
+      <div className={`relative h-[300px] md:h-[380px] ${iceberg.className}`}>
         <img
           src="/principal_manifesto.webp"
           alt="Cabeçalho da página do manifesto"
-          className="absolute inset-0 w-full h-full object-fill opacity-70"
+          className="absolute inset-0 w-full h-full object-cover md:object-fill opacity-70"
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center text-7xl font-normal gap-7">
-          <p style={{ letterSpacing: "0.4em", textShadow: "2px 2px 8px #946968" }}>
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center gap-4 px-4">
+          <p className="text-4xl md:text-7xl font-normal w-full max-w-[90%] mx-auto"
+            style={{ letterSpacing: "0.4em", textShadow: "2px 2px 8px #946968" }}
+          >
             O MANIFESTO
           </p>
         </div>
       </div>
 
       {/* Texto inicial */}
-      <div className="relative h-60 mb-6">
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center font-normal gap-6">
-          <p className="text-[1.5em] text-[#89212F] mb-6 mt-12">
-            O PLANETA PEDE SOCORRO
-          </p>
-          <p className="text-[1.1em] text-[#C63230]">
-            “Não há Plano B, porque não temos um planeta B.”
-          </p>
-          <p className="text-[1.1em] text-[#C63230]">Ban Ki Moon</p>
-        </div>
+      <div className="relative w-full flex flex-col items-center text-center font-normal gap-6 px-4 py-18">
+        <p className="text-x1 md:text-2xl text-[#89212F] mb-4 px-4">
+          O PLANETA PEDE SOCORRO
+        </p>
+        <p className="text-base md:text-lg text-[#C63230] px-4">
+          “Não há Plano B, porque não temos um planeta B.”
+        </p>
+        <p className="text-base md:text-lg text-[#C63230] px-4">Ban Ki Moon</p>
       </div>
 
       {/* Carrossel */}
-      <div className="relative h-65 opacity-80">
+      <div className="relative h-[200px] md:h-[250px] opacity-80">
         <CarrosselImagens imagens={imagensDoCarrossel} />
       </div>
 
       {/* Texto do manifesto justificado */}
-      <div className="relative w-full px-8 py-12 flex justify-center">
+      <div className="relative w-full flex justify-center px-8 md:px-10 py-12">
         <div
-          className="max-w-4xl text-[1.15em] leading-relaxed space-y-4 "
+          className="max-w-4xl text-base md:text-[1.15em] leading-relaxed space-y-4"
           style={{ textAlign: "justify" }}
         >
           {/*indent é a tabulação da primeira linha */}
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
            	teste teste teste teste teste teste teste teste teste teste teste teste teste
             teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
             teste.
           </p>
-          <p className="indent-18"> 
+          <p className="indent-10"> 
             teste teste teste teste teste teste teste teste teste teste teste teste teste
 		        teste teste teste teste testeteste teste teste teste testeteste teste teste teste
             testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
