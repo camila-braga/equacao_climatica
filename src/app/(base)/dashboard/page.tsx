@@ -145,11 +145,15 @@ export default function IntroDashboard() {
     <main className="p-4 fillScreen">
       <div className="w-full flex flex-col items-center">
         <h1 className={`w-1/3 text-center text-[2em] text-[#89212F] font-bold ${iceberg.className}`}>DASHBOARD</h1>
-        <p className={`w-1/3 text-center text-[1.5em] mb-6 ${josefinSans.className}`}>Texto introduzindo ao dashboard</p>
+        <p className={`w-2/3 lg:w-1/3 text-center mb-6 ${josefinSans.className}`}>
+            No dashboard você obtém uma visualização dinâmica dos crescimento da concentração de CO2 na atmosfera.
+            Os dados oficiais foram coletados do site da <a href="https://climate.nasa.gov/vital-signs/" className="text-red-900 underline">Nasa</a>.
+            Abaixo, é possível selecionar o tipo de ajuste dos dados e observar as predições da concentração de CO2 na atmosfera até o ano de 2050, de acordo com o ajuste escolhido. 
+        </p>
       </div>
-      <hr className="border-red-900" />
-      <div className="flex mt-6">
-        <div className="w-2/3">
+      <div className="md:grid md:grid-rows-3 md:grid-cols-3 border-t gap-3">
+        <div className="md:row-span-3 md:col-span-2 pt-6 md:border-r">
+          <h2 className="text-[1.5em] text-[#89212F] pl-6 mt-1" >Concentração de CO2 na atmosfera</h2>
           <ChartContainer
             series={chartSeries}
             height={500}
@@ -178,8 +182,9 @@ export default function IntroDashboard() {
             <ChartsGrid vertical horizontal/>
           </ChartContainer>
         </div>
-        <div className="w-1/3">
-          <h2 className="text-[1.5em] text-[#89212F] mb-6 mt-2">Selecione o tipo de ajuste</h2>
+
+        <div className="pb-6 pt-6 md:pb-0 md:pt-0 border-t md:border-t-0 md:row-span-1 col-span-1 border-b md:flex md:flex-col md:justify-center">
+          <h2 className="text-[1.5em] text-[#89212F] mb-6">Selecione o tipo de ajuste</h2>
           <FormControl fullWidth>
             <InputLabel id="adjust-type-label">Tipo</InputLabel>
             <Select
@@ -188,7 +193,6 @@ export default function IntroDashboard() {
               value={adjustType}
               label="Age"
               onChange={handleAdjustTypeChange}
-              className="mb-6"
             >
               <MenuItem value="linear">Linear</MenuItem>
               <MenuItem value="log">Logarítmico</MenuItem>
@@ -198,8 +202,10 @@ export default function IntroDashboard() {
               <MenuItem value="geo">Geométrica</MenuItem>
             </Select>
           </FormControl>
-          <hr className="border-red-900"/>
-          <h3 className="text-[1.25em] text-[#89212F] mt-6 mb-6">{currAdjustType.title}</h3>
+        </div>
+          
+        <div className="md:row-span-2 mt-6 mb-6">
+          <h3 className="text-[1.25em] text-[#89212F] mb-6">{currAdjustType.title}</h3>
           <div>
             {currAdjustType.description}
           </div>
