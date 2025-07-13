@@ -1,11 +1,25 @@
 'use client';
 import "./page.css"
 import {AllSeriesType, ChartContainer, ChartsGrid, ChartsTooltip, ChartsXAxis, ChartsYAxis, LinePlot, ScatterPlot, ScatterSeriesType} from "@mui/x-charts"
-import { Dispatch, ReactElement, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 import Papa from "papaparse";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { Iceberg, Josefin_Sans } from "next/font/google";
+import Latex from "react-latex-next";
+import 'katex/dist/katex.min.css';
+import { parameters } from './parameters';
 
+type Point = {
+  x: number;
+  y: number;
+};
+
+type AdjustType = {
+  title: string;
+  description: ReactNode,
+  adjustDataPath: string,
+  predictionDataPath: string
+};
 
 const iceberg = Iceberg({
   subsets: ["latin"],
@@ -16,18 +30,6 @@ const josefinSans = Josefin_Sans({
   subsets: ["latin"],
   weight: ["500"], // medium do figma
 });
-
-type Point = {
-  x: number;
-  y: number;
-};
-
-type AdjustType = {
-  title: string;
-  description: ReactElement,
-  adjustDataPath: string,
-  predictionDataPath: string
-};
 
 function fetchPointsFromCsv(csvPath: string, xHeader: string, yHeader: string, setState: Dispatch<SetStateAction<Point[]>>) {
   fetch(csvPath)
@@ -46,43 +48,103 @@ function fetchPointsFromCsv(csvPath: string, xHeader: string, yHeader: string, s
         }
       })
     })
-}
-
+  }
 
 const adjustTypeInformation: {[key: string] : AdjustType} = {
   "linear": {
     title: "Ajuste linear",
-    description: <p>O que vai ser redenrizado na descrição do ajuste, bom para LaTeX</p>,
+    description: (
+      <>
+        <p className="mb-3">O ajuste linear encontra a reta <Latex>$g(x) = ax + b$</Latex> que possui o menor erro acumulado com os dados.</p>
+        <p><Latex>{`Valor de $a$ encontrado: \$${parameters.linear.a}\$`}</Latex></p>
+        <p><Latex>{`Valor de $b$ encontrado: \$${parameters.linear.b}\$`}</Latex></p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.linear.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_linear.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_linear.csv"
   },
   "log": {
     title: "Ajuste logaritmico",
-    description: <p>O que vai ser redenrizado na descrição do ajuste, bom para LaTeX</p>,
+    description: (
+      <>
+        <p className="mb-3">O ajuste logarítmico encontra a função do tipo <Latex>$g(x) = a\ln(x) + b$</Latex> 
+        que possui o menor erro acumulado com os dados. 
+        Podemos usar o ajuste linear para calcular o logarítmico, substituindo <Latex>$x$ por $\ln(x)$</Latex>.</p>
+        <p><Latex>{`Valor de $a$ encontrado: \$${parameters.log.a}\$`}</Latex></p>
+        <p><Latex>{`Valor de $b$ encontrado: \$${parameters.log.b}\$`}</Latex></p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.log.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_logaritmico.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_logaritmica.csv"
   },
   "pot": {
     title: "Ajuste de potência",
-    description: <p>O que vai ser redenrizado na descrição do ajuste, bom para LaTeX</p>,
+    description: (
+      <>
+        <p className="mb-3">O ajuste de potência encontra a função <Latex>$g(x)= bx^a$</Latex> que
+        possui o menor erro acumulado com os dados. A forma linearizada desta função
+        é <Latex>$\ln(y) = a\ln(x) + \ln(b)$</Latex>. Isto nos permite usar o ajuste linear para encontrar valores
+        de <Latex>$a'$ e $b'$ substituindo $x$ por $\ln(x)$, $y$ por $\ln(y)$. Assim, temos $a=a'$ e $b=e^{"{b'}"}$</Latex></p>
+        <p><Latex>{`Valor de $a$ encontrado: \$${parameters.pot.a}\$`}</Latex></p>
+        <p><Latex>{`Valor de $b$ encontrado: \$${parameters.pot.b}\$`}</Latex></p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.pot.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_potencial.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_potencial.csv"
   },
   "quad": {
     title: "Ajuste quadrático",
-    description: <p>O que vai ser redenrizado na descrição do ajuste, bom para LaTeX</p>,
+    description: (
+      <>
+        <p className="mb-3">O ajuste quadrático encontra a parábola <Latex>$g(x) = ax^2 + bx + c$</Latex> que 
+        melhor se ajusta com os dados. O cálculo do ajuste decorre da solução do sistema de equações abaixo, que é obtido
+        através do cálculo das derivadas parciais de <Latex>$a$, $b$ e $c$ da função $f(x) = \sum (y - g(x))^2$</Latex>.</p>
+        <p className="mb-3">
+        <Latex>
+        $$
+          {`\\begin{cases}`}
+          {`a\\sum x^2 + b\\sum x + nc = \\sum y \\\\`}
+          {`a\\sum x^3 + b\\sum x^2 + c\\sum x = \\sum xy \\\\`}
+          {`a\\sum x^4 + b\\sum x^3 + c\\sum x^2 = \\sum x^2y \\\\`}
+          {`\\end{cases}`}
+        $$
+        </Latex></p>
+        <p className="mb-3">Para resolver o sistema de equações, foi utilizado o método da eliminação de Gauss. Estes foram os parametros encontrados:</p>
+        <p><Latex>{`Valor de $a$ encontrado: \$${parameters.quad.a}\$`}</Latex></p>
+        <p><Latex>{`Valor de $b$ encontrado: \$${parameters.quad.b}\$`}</Latex></p>
+        <p><Latex>{`Valor de $c$ encontrado: \$${parameters.quad.c}\$`}</Latex></p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.quad.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_quadratico.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_quadratica.csv"
   },
   "geo": {
     title: "Ajuste geométrico",
-    description: <p>O que vai ser redenrizado na descrição do ajuste, bom para LaTeX</p>,
+    description: (
+      <>
+        <p className="mb-3">O ajuste linear encontra a reta <Latex>$ax + b$</Latex> que possui o menor erro acumulado com os dados.</p>
+        <p><Latex>{`Valor de $a$ encontrado: \$${parameters.geo.a}\$`}</Latex></p>
+        <p><Latex>{`Valor de $b$ encontrado: \$${parameters.geo.b}\$`}</Latex></p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.geo.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_geometrica.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_geometrica.csv"
   },
   "exp": {
     title: "Ajuste exponencial",
-    description: <p>O que vai ser redenrizado na descrição do ajuste, bom para LaTeX</p>,
+    description: (
+      <>
+        <p className="mb-3">O ajuste linear encontra a reta <Latex>$ax + b$</Latex> que possui o menor erro acumulado com os dados.</p>
+        <p><Latex>{`Valor de $a$ encontrado: \$${parameters.exp.a}\$`}</Latex></p>
+        <p><Latex>{`Valor de $b$ encontrado: \$${parameters.exp.b}\$`}</Latex></p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.exp.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_exponencial.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_exponencial.csv"
   }
@@ -151,8 +213,8 @@ export default function IntroDashboard() {
             Abaixo, é possível selecionar o tipo de ajuste dos dados e observar as predições da concentração de CO2 na atmosfera até o ano de 2050, de acordo com o ajuste escolhido. 
         </p>
       </div>
-      <div className="md:grid md:grid-rows-3 md:grid-cols-3 border-t gap-3">
-        <div className="md:row-span-3 md:col-span-2 pt-6 md:border-r">
+      <div className="md:grid md:grid-rows-4 md:grid-cols-3 border-t gap-3">
+        <div className="md:row-span-4 md:col-span-2 pt-6 md:border-r">
           <h2 className="text-[1.5em] text-[#89212F] pl-6 mt-1" >Concentração de CO2 na atmosfera</h2>
           <ChartContainer
             series={chartSeries}
@@ -204,15 +266,13 @@ export default function IntroDashboard() {
           </FormControl>
         </div>
           
-        <div className="md:row-span-2 mt-6 mb-6">
+        <div className="md:row-span-3 mt-6 mb-6">
           <h3 className="text-[1.25em] text-[#89212F] mb-6">{currAdjustType.title}</h3>
           <div>
             {currAdjustType.description}
           </div>
         </div>
       </div>
-
-      
     </main>
   );
 }
