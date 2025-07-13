@@ -126,7 +126,8 @@ const adjustTypeInformation: {[key: string] : AdjustType} = {
     title: "Ajuste geométrico",
     description: (
       <>
-        <p className="mb-3">O ajuste linear encontra a reta <Latex>$ax + b$</Latex> que possui o menor erro acumulado com os dados.</p>
+        <p className="mb-3"> Ajuste geométrico encontra a função do tipo <Latex>$g(x) = b \cdot a^x$</Latex></p>
+        <p className="mb-3">Para linearizar o problema, aplicamos logaritmo natural em ambos os lados da equação, obtendo <Latex>$\ln(y) = x \cdot \ln(a) + \ln(b)$</Latex>. Isso nos permite usar o ajuste linear tradicional substituindo <Latex>$y$ por $\ln(y)$</Latex>, onde o coeficiente angular corresponde a <Latex>$\ln(a)$</Latex> e o coeficiente linear a <Latex>$\ln(b)$</Latex>.</p>
         <p><Latex>{`Valor de $a$ encontrado: \$${parameters.geo.a}\$`}</Latex></p>
         <p><Latex>{`Valor de $b$ encontrado: \$${parameters.geo.b}\$`}</Latex></p>
         <p><Latex>{`Valor do $r^2$: \$${parameters.geo.r2}\$`}</Latex></p>
@@ -139,7 +140,8 @@ const adjustTypeInformation: {[key: string] : AdjustType} = {
     title: "Ajuste exponencial",
     description: (
       <>
-        <p className="mb-3">O ajuste linear encontra a reta <Latex>$ax + b$</Latex> que possui o menor erro acumulado com os dados.</p>
+      <p className="mb-3">O ajuste exponencial modela a relação através da função <Latex>$g(x) = a \cdot e^{"{bx}"}$</Latex>.</p>
+     <p className="mb-3">Para linearizar o problema, aplicamos logaritmo natural em ambos os lados, resultando em <Latex>$\ln(y) = bx + \ln(a)$</Latex>. O ajuste linear é então realizado substituindo <Latex>$y$ por $\ln(y)$</Latex>, onde o coeficiente angular corresponde a <Latex>$b$</Latex> e o coeficiente linear a <Latex>$\ln(a)$</Latex></p>
         <p><Latex>{`Valor de $a$ encontrado: \$${parameters.exp.a}\$`}</Latex></p>
         <p><Latex>{`Valor de $b$ encontrado: \$${parameters.exp.b}\$`}</Latex></p>
         <p><Latex>{`Valor do $r^2$: \$${parameters.exp.r2}\$`}</Latex></p>
