@@ -47,10 +47,6 @@ export default function MenuHeader() {
     setAnchorElDashboard(event.currentTarget);
   };
 
-  const handleCloseDashboard = () => {
-    setAnchorElDashboard(null);
-  };
-
   const pathname = usePathname();
 
   /*Para não ter que ficar repetindo esse sx em todos os itens do menu*/
@@ -149,36 +145,11 @@ export default function MenuHeader() {
             </Menu>
             <Button
               color="inherit"
-              onClick={handleOpenDashboard}
+              href="/dashboard"
               sx={[mainButtonBaseSx, {borderBottom: pathname === "/dashboard" ? "2px solid white" : "2px solid transparent",}]}
             >
               Dashboard
             </Button>
-            <Menu
-              anchorEl={anchorElDashboard}
-              open={Boolean(anchorElDashboard)}
-              onClose={handleCloseDashboard}
-            >
-              {[
-                { label: "Introdução", href: "/dashboard" },
-                { label: "Linear", href: "/dashboard/linear" },
-                { label: "Exponencial", href: "/dashboard/exponencial" },
-                { label: "Logarítmica", href: "/dashboard/logaritmica" },
-                { label: "Potência", href: "/dashboard/potencia" },
-                { label: "Geométrica", href: "/dashboard/geometrica" },
-                { label: "Quadrática", href: "/dashboard/quadratica" },
-              ].map(({ label, href }) => (
-                  <MenuItem
-                    key={href}
-                    component={Link}
-                    href={href}
-                  onClick={handleCloseDashboard}
-                  sx={menuItemSx}
-                >
-                  {label}
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         )}
 
@@ -253,36 +224,12 @@ export default function MenuHeader() {
                 ))}
               </Menu>
               <MenuItem
-                onClick={handleOpenDashboard}
+                href="/dashboard"
+                onClick={handleCloseNavMenu}
                 sx={menuItemSxMobile}
               >
                 Dashboard
               </MenuItem>
-              <Menu
-                anchorEl={anchorElDashboard}
-                open={Boolean(anchorElDashboard)}
-                onClose={handleCloseDashboard}
-              >
-                {[
-                  { label: "Introdução", href: "/dashboard" },
-                  { label: "Linear", href: "/dashboard/linear" },
-                  { label: "Exponencial", href: "/dashboard/exponencial" },
-                  { label: "Logarítmica", href: "/dashboard/logaritmica" },
-                  { label: "Potência", href: "/dashboard/potencia" },
-                  { label: "Geométrica", href: "/dashboard/geometrica" },
-                  { label: "Quadrática", href: "/dashboard/quadratica" },
-                ].map(({ label, href }) => (
-                  <MenuItem
-                    key={href}
-                    component={Link}
-                    href={href}
-                    onClick={handleCloseDashboard}
-                    sx={menuItemSxMobile}
-                  >
-                    {label}
-                  </MenuItem>
-                ))}
-              </Menu>
             </Menu>
           </>
         )}
