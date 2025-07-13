@@ -5,7 +5,7 @@ import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react"
 import Papa from "papaparse";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { Iceberg, Josefin_Sans } from "next/font/google";
-import Latex from "react-latex-next";
+import Latex from "react-latex";
 import 'katex/dist/katex.min.css';
 import { parameters } from './parameters';
 
@@ -86,7 +86,7 @@ const adjustTypeInformation: {[key: string] : AdjustType} = {
         <p className="mb-3">O ajuste de potência encontra a função <Latex>$g(x)= bx^a$</Latex> que
         possui o menor erro acumulado com os dados. A forma linearizada desta função
         é <Latex>$\ln(y) = a\ln(x) + \ln(b)$</Latex>. Isto nos permite usar o ajuste linear para encontrar valores
-        de <Latex>$a'$ e $b'$ substituindo $x$ por $\ln(x)$, $y$ por $\ln(y)$. Assim, temos $a=a'$ e $b=e^{"{b'}"}$</Latex></p>
+        de <Latex>{`$a'$ e $b'$ substituindo $x$ por $\\ln(x)$, $y$ por $\\ln(y)$. Assim, temos $a=a'$ e $b=e^{b'}$`}</Latex></p>
         <p><Latex>{`Valor de $a$ encontrado: \$${parameters.pot.a}\$`}</Latex></p>
         <p><Latex>{`Valor de $b$ encontrado: \$${parameters.pot.b}\$`}</Latex></p>
         <p><Latex>{`Valor do $r^2$: \$${parameters.pot.r2}\$`}</Latex></p>
@@ -103,14 +103,14 @@ const adjustTypeInformation: {[key: string] : AdjustType} = {
         melhor se ajusta com os dados. O cálculo do ajuste decorre da solução do sistema de equações abaixo, que é obtido
         através do cálculo das derivadas parciais de <Latex>$a$, $b$ e $c$ da função $f(x) = \sum (y - g(x))^2$</Latex>.</p>
         <p className="mb-3">
-        <Latex>
-        $$
-          {`\\begin{cases}`}
-          {`a\\sum x^2 + b\\sum x + nc = \\sum y \\\\`}
-          {`a\\sum x^3 + b\\sum x^2 + c\\sum x = \\sum xy \\\\`}
-          {`a\\sum x^4 + b\\sum x^3 + c\\sum x^2 = \\sum x^2y \\\\`}
-          {`\\end{cases}`}
-        $$
+        <Latex displayMode>
+        {`$$
+          \\begin{cases}
+            a\\sum x^2 + b\\sum x + nc = \\sum y \\\\
+            a\\sum x^3 + b\\sum x^2 + c\\sum x = \\sum xy \\\\
+            a\\sum x^4 + b\\sum x^3 + c\\sum x^2 = \\sum x^2y \\\\
+          \\end{cases}
+        $$`}
         </Latex></p>
         <p className="mb-3">Para resolver o sistema de equações, foi utilizado o método da eliminação de Gauss. Estes foram os parametros encontrados:</p>
         <p><Latex>{`Valor de $a$ encontrado: \$${parameters.quad.a}\$`}</Latex></p>
