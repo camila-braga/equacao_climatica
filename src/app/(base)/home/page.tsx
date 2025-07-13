@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className={`w-full flex flex-col ${josefinSans.className}`}>
       {/* Cabeçalho*/}
-      <div className={`relative h-[500px] md:h-[480px] ${iceberg.className}`}>
+      <div className={`relative h-[400px] md:h-[480px] ${iceberg.className}`}>
         <img
           src="/principal_home.jpg"
           alt="Cabeçalho da página principal"
@@ -179,7 +179,7 @@ export default function Home() {
       </div>
 
       {/* Imagem final*/}
-      <div className="relative w-full h-[480px] md:h-[680px]">
+      <div className="relative w-full h-[400px] md:h-[680px]">
         <img
           src="/img_home5.jpg"
           alt="Urso polar num bloco de gelo derretendo no oceano"
