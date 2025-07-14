@@ -71,14 +71,14 @@ export default function Home() {
 
       {/* Parte manifesto*/}
       <div className="relative flex flex-col md:flex-row gap-6 mb-24">
-        <div className="w-full md:w-2/3 h-[400px] md:h-[500px]">
+        <div className="w-full md:w-1/2 h-[400px] md:h-[500px]">
           <img
             src="/img_home1.jpg"
             alt="Imagem de veado em floresta queimada"
-            className="w-full h-full object-cover md:object-fill opacity-80"
+            className="w-full h-full object-cover md:object-cover opacity-80"
           />
         </div>
-        <div className="w-full md:w-1/3 flex flex-col justify-center items-center text-center px-6 py-6 gap-4">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center px-6 py-6 gap-4">
           <div className="max-w-[400px] flex flex-col gap-5">
             <p className={`text-2xl md:text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               O MANIFESTO
@@ -99,7 +99,7 @@ export default function Home() {
       {/* Parte métodos*/}
       <div className="relative flex flex-col md:flex-row gap-6 mb-24">
         
-        <div className="w-full md:w-1/3 flex flex-col justify-center items-center text-center px-6 py-6 gap-4 order-2 md:order-1">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center px-6 py-6 gap-4 order-2 md:order-1">
           <div className="max-w-[400px] flex flex-col gap-5">
             <p className={`text-2xl md:text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               OS MÉTODOS
@@ -115,25 +115,25 @@ export default function Home() {
             <CustomButton label="Acessar" href="/metodos" />
           </div>
         </div>
-        <div className="w-full md:w-2/3 h-[400px] md:h-[500px] order-1 md:order-2">
+        <div className="w-full md:w-1/2 h-[400px] md:h-[500px] order-1 md:order-2">
           <img
             src="/img_home2.jpg"
             alt="Terra desértica"
-            className="w-full h-full object-cover md:object-fill opacity-80"
+            className="w-full h-full object-cover md:object-cover opacity-80"
           />
         </div>
       </div>
        
       {/* Parte dashboard*/}
       <div className="relative flex flex-col md:flex-row gap-6 mb-24">
-        <div className="w-full md:w-2/3 h-[400px] md:h-[500px]">
+        <div className="w-full md:w-1/2 h-[400px] md:h-[500px]">
           <img
             src="/img_home3.png"
             alt="Homem andando numa rua alagada por enchentes"
-            className="w-full h-full object-cover md:object-fill opacity-80"
+            className="w-full h-full object-cover md:object-cover opacity-80"
           />
         </div>
-        <div className="w-full md:w-1/3 flex flex-col justify-center items-center text-center px-6 py-6 gap-4">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center px-6 py-6 gap-4">
           <div className="max-w-[400px] flex flex-col gap-5">
             <p className={`text-2xl md:text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               O DASHBOARD
@@ -154,7 +154,7 @@ export default function Home() {
       {/* Parte equipe*/}
       <div className="relative flex flex-col md:flex-row gap-6 mb-24">
         
-        <div className="w-full md:w-1/3 flex flex-col justify-center items-center text-center px-6 py-6 gap-4 order-2 md:order-1">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center px-6 py-6 gap-4 order-2 md:order-1">
           <div className="max-w-[400px] flex flex-col gap-5">
             <p className={`text-2xl md:text-[1.5em] text-[#89212F] font-bold ${iceberg.className}`}>
               A EQUIPE
@@ -169,11 +169,11 @@ export default function Home() {
             <CustomButton label="Acessar" href="/metodos" />
           </div>
         </div>
-        <div className="w-full md:w-2/3 h-[400px] md:h-[500px] order-1 md:order-2">
+        <div className="w-full md:w-1/2 h-[400px] md:h-[500px] order-1 md:order-2">
           <img
             src="/img_home4.jpg"
             alt="Furacão"
-            className="w-full h-full object-cover md:object-fill opacity-80"
+            className="w-full h-full object-cover md:object-cover opacity-80"
           />
         </div>
       </div>
@@ -183,7 +183,7 @@ export default function Home() {
         <img
           src="/img_home5.jpg"
           alt="Urso polar num bloco de gelo derretendo no oceano"
-          className="w-full h-full object-fill opacity-80" 
+          className="w-full h-full object-fill md:object-cover opacity-80" 
           style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)',
                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)',}}
         />
