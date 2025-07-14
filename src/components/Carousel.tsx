@@ -11,27 +11,41 @@ type CarrosselImagensProps = {
 export default function CarrosselImagens({ imagens }: CarrosselImagensProps) {
   const settings = {
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
     dots: false,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024, // tablets e abaixo
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640, // mobile
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
+  
 
   return (
     <>
       <style jsx global>{`
         /* Container que envolve os slides */
         .slick-list {
-          height: 300px !important;
+          
           overflow: hidden;
         }
 
         /* Cada slide */
         .slick-slide {
-          height: 250px !important;
           display: flex !important;
           justify-content: center;
           align-items: center;
@@ -40,7 +54,6 @@ export default function CarrosselImagens({ imagens }: CarrosselImagensProps) {
 
         /* Container interno que react-slick cria dentro do slide */
         .slick-slide > div {
-          height: 100% !important;
           width: 100% !important;
           display: flex !important;
           justify-content: center;
@@ -52,7 +65,6 @@ export default function CarrosselImagens({ imagens }: CarrosselImagensProps) {
         style={{
           maxWidth: "100%",
           overflow: "hidden",
-          height: "250px",
         }}
       >
         <Slider {...settings}>
@@ -61,14 +73,7 @@ export default function CarrosselImagens({ imagens }: CarrosselImagensProps) {
               <img
                 src={src}
                 alt={alt}
-                style={{
-                  width: "100%",
-                  height: "220px",
-                  objectFit: "cover",
-                  display: "block",
-                  borderRadius: "12px",
-                  userSelect: "none",
-                }}
+                className="w-full max-h-[220px] object-cover block rounded-lg select-none"
                 draggable={false}
               />
             </div>
