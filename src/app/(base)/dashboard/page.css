@@ -1,0 +1,3 @@
+.fillScreen {
+    min-height: calc(100% - (62px + 64px));
+}
