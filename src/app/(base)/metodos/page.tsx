@@ -3,7 +3,7 @@ import { Iceberg } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
 import Latex from "react-latex";
 import 'katex/dist/katex.min.css';
-import { ReactNode } from "react";
+import { CustomLink } from "@/components/CustomLink";
 
 
 const iceberg = Iceberg({
@@ -16,18 +16,7 @@ const josefinSans = Josefin_Sans({
   weight: ["500"], // medium do figma
 });
 
-type CustomLinkProps = {
-    href: string;
-    children?: ReactNode;
-}
 
-function CustomLink({href, children}: CustomLinkProps) {
-    return <a 
-      style={{backgroundColor: "#C63230"}} 
-      href={href}
-      className="text-center text-white p-1 rounded-xs"
-    >{children}</a>
-}
 
 export default function ExponencialMetodos() {
   return (
@@ -99,17 +88,17 @@ export default function ExponencialMetodos() {
             <CustomLink href="/metodos/linear">
               Ajuste linear
             </CustomLink>
-            <CustomLink href="/metodos/logaritmica">
-              Ajuste Logarítmico
-            </CustomLink>
             <CustomLink href="/metodos/exponencial">
               Ajuste Exponencial
             </CustomLink>
-            <CustomLink href="/metodos/geometrica">
-              Ajuste Geométrico
+            <CustomLink href="/metodos/logaritmica">
+              Ajuste Logarítmico
             </CustomLink>
             <CustomLink href="/metodos/potencia">
               Ajuste de Potência
+            </CustomLink>
+            <CustomLink href="/metodos/geometrica">
+              Ajuste Geométrico
             </CustomLink>
             <CustomLink href="/metodos/quadratica">
               Ajuste Quadrático
