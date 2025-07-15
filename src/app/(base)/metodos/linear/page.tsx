@@ -132,7 +132,7 @@ export default function ExponencialMetodos() {
 
         <div className="w-2/3 flex flex-col gap-3 m-auto">
           <CustomLink href="https://docs.google.com/spreadsheets/d/1mosAvcULrJ4WIWvFMuOghjg2q5nN7w5a7gkWbsv5Imo/edit?usp=sharing">
-            Tabela de dados
+            Tabela de dados - Linear
           </CustomLink>
           <CustomLink href="/metodos/exponencial">
             Ajuste Exponencial

@@ -1,5 +1,9 @@
+'use client';
+import { CustomLink } from '@/components/CustomLink';
+import 'katex/dist/katex.min.css';
 import { Iceberg } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
+import Latex from 'react-latex';
 
 const iceberg = Iceberg({
   subsets: ["latin"],
@@ -15,7 +19,7 @@ export default function ExponencialMetodos() {
   return (
     <main className={`w-full flex flex-col ${josefinSans.className}`}>
     {/* Cabeçalho*/}
-    <div className="relative h-80 ${iceberg.className}">
+    <div className="relative h-95 ${iceberg.className}">
       <img
         src="/principal_metodos.jpg"
         alt="Cabeçalho da página de métodos exponenciais"
@@ -26,78 +30,47 @@ export default function ExponencialMetodos() {
           OS MÉTODOS
         </p>
         <p style={{ fontSize: '1.2rem', letterSpacing: "0.1em", textShadow: "2px 2px 20px #946968, 0px 0px 12px #C81E1C"}}>
-          CALCULO DOS AJUSTES DE MMO
+          CALCULO DOS AJUSTES DE MMQ
         </p>
       </div>
     </div>
 
     {/* Texto inicial*/}
-    <div className="relative h-60 mb-6">
+    <div className="relative h-30 mb-6">
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center font-normal gap-6">
-        <p className="text-[1.1em] text-[#89212F] mb-6 mt-12">
-          LINK PARA OS CÓDIGOS: ...........................................................
-        </p>
         <p className="text-[1.5em] text-[#C63230]">
-          GEOMÉTRICA
+          AJUSTE GEOMÉTRICO
         </p>
       </div>
     </div>
 
     {/* Parte do conteúdo */}
-    <div className="relative w-full px-8 py-12 flex justify-center">
+    <div className="relative w-full px-8 pb-8 flex justify-center">
       <div
         className="max-w-4xl text-[1.2em] leading-relaxed space-y-4 "
         style={{ textAlign: "justify" }}
       >
         {/*indent é a tabulação da primeira linha */}
         <p className="indent-18"> 
-           teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
+          O ajuste geométrico é caracterizado pela função: <Latex>{`$g(x) = ba^x$`}</Latex>.
         </p>
-        <p className="indent-18"> 
-          teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
+
+        <p className="indent-18">
+            A forma linearizada dessa função é: <Latex>{`$\\ln (y) = x\\ln(a) + \\ln(b)$`}</Latex>.
+            Usando o <a href="linear" className='underline'>ajuste linear</a>, podemos calcular os valores de <Latex>$\ln(a)$ e $\ln(b)$</Latex> ao
+            substituir os valores de <Latex>$y$ por $\ln(y)$</Latex>.
+            Por fim, para calcular o valor real
+            de <Latex>{`$a$ e de $b$, é preciso calcular $e^{\\ln(a)}$ e $e^{\\ln(b)}$`}</Latex>.
         </p>
-        <p className="indent-18"> 
-           teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
-        </p>
-        <p className="indent-18"> 
-          teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
-        </p>
-        <p className="indent-18"> 
-           teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
-        </p>
-        <p className="indent-18"> 
-          teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
-        </p>
-        <p className="indent-18"> 
-           teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
-        </p>
-        <p className="indent-18"> 
-          teste teste teste teste teste teste teste teste teste teste teste teste teste
-          teste teste teste teste testeteste teste teste teste testeteste teste teste teste
-          testeteste teste teste teste teste teste teste teste teste testeteste teste teste 
-          teste.
-        </p>
+
+        <div className="w-2/3 flex flex-col gap-3 m-auto">
+          <CustomLink href="https://docs.google.com/spreadsheets/d/1mosAvcULrJ4WIWvFMuOghjg2q5nN7w5a7gkWbsv5Imo/edit?usp=sharing">
+            Tabela de dados - Geométrico
+          </CustomLink>
+          <CustomLink href="geometrica">
+            Ajuste Geométrico
+          </CustomLink>
+        </div>
       </div>
     </div>
   </main>
