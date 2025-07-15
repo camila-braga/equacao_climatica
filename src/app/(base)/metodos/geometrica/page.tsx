@@ -64,7 +64,7 @@ export default function ExponencialMetodos() {
         </p>
 
         <div className="w-2/3 flex flex-col gap-3 m-auto">
-          <CustomLink href="https://docs.google.com/spreadsheets/d/1mosAvcULrJ4WIWvFMuOghjg2q5nN7w5a7gkWbsv5Imo/edit?usp=sharing">
+          <CustomLink target="_blank" href="https://docs.google.com/spreadsheets/d/1mosAvcULrJ4WIWvFMuOghjg2q5nN7w5a7gkWbsv5Imo/edit?usp=sharing#gid=275556858">
             Tabela de dados - Geométrico
           </CustomLink>
           <CustomLink href="geometrica">
