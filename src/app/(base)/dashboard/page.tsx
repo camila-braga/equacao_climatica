@@ -204,14 +204,31 @@ export default function IntroDashboard() {
   const currAdjustType = adjustTypeInformation[adjustType]
 
   return (
-    <main className="p-4 fillScreen">
-      <div className="w-full flex flex-col items-center">
-        <h1 className={`w-1/3 text-center text-[2em] text-[#89212F] font-bold ${iceberg.className}`}>DASHBOARD</h1>
-        <p className={`w-2/3 lg:w-1/3 text-center mb-6 ${josefinSans.className}`}>
-            No dashboard você obtém uma visualização dinâmica dos crescimento da concentração de CO2 na atmosfera.
-            Os dados oficiais foram coletados do site da <a href="https://climate.nasa.gov/vital-signs/" className="text-red-900 underline">Nasa</a>.
-            Abaixo, é possível selecionar o tipo de ajuste dos dados e observar as predições da concentração de CO2 na atmosfera até o ano de 2050, de acordo com o ajuste escolhido. 
-        </p>
+    <main className="w-full flex flex-col fillScreen">
+      {/* Cabeçalho*/}
+      <div className={`relative h-95 ${iceberg.className}`}>
+        <img
+          src="/principal_dashboard.jpeg"
+          alt="Cabeçalho da página de dashboard"
+          className="absolute inset-0 w-full h-full object-fill opacity-70 "
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center text-7xl font-normal gap-7">
+          <p style={{ letterSpacing: "0.4em", textShadow: "2px 2px 8px #946968"}}>
+            DASHBOARD
+          </p>
+          <p style={{ fontSize: '1.3rem', letterSpacing: "0.1em", textShadow: "2px 2px 20px #946968, 0px 0px 12px #C81E1C"}}>
+            CONCENTRAÇÃO DE CO2 NA ATMOSFERA ATÉ 2050
+          </p>
+        </div>
+      </div>
+      <div className="relative h-60 mb-6">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center font-normal gap-6">
+          <p className={`w-2/3 lg:w-1/3 text-center mb-6 ${josefinSans.className}`}>
+              No dashboard você obtém uma visualização dinâmica dos crescimento da concentração de CO2 na atmosfera.
+              Os dados oficiais foram coletados do site da <a href="https://climate.nasa.gov/vital-signs/" className="text-red-900 underline">Nasa</a>.
+              Abaixo, é possível selecionar o tipo de ajuste dos dados e observar as predições da concentração de CO2 na atmosfera até o ano de 2050, de acordo com o ajuste escolhido. 
+          </p>
+        </div>
       </div>
       <div className="md:grid md:grid-rows-4 md:grid-cols-3 border-t gap-3">
         <div className="md:row-span-4 md:col-span-2 pt-6 md:border-r">
