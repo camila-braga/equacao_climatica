@@ -149,8 +149,39 @@ const adjustTypeInformation: {[key: string] : AdjustType} = {
     ),
     adjustDataPath: "/dashboard/adjusts/ajuste_1958_2025_exponencial.csv",
     predictionDataPath: "/dashboard/predictions/previsoes_2025_2050_exponencial.csv"
-  }
+  },
+  "paris-linear": {
+    title: "Acordo de Paris - AJuste Linear",
+    description: "",
+    adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_linearv2.csv",
+    predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_linearv2.csv"
+  },
+  "paris-log": {
+    title: "Acordo de Paris - AJuste Logarítmico",
+    description: "",
+    adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_logaritmicov2.csv",
+    predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_logaritmicav2.csv"
+  },
+  "paris-pot": {
+    title: "Acordo de Paris - AJuste Potência",
+    description: "",
+    adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_potencialv2.csv",
+    predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_potencialv2.csv"
+  },
+
+  "paris-quad": {
+    title: "Acordo de Paris - AJuste Quadrático",
+    description: "",
+    adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_quadraticov2.csv",
+    predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_quadraticav2.csv"
+  },
+	
 }
+
+function isParisAgreement(adjustType: string){
+  return adjustType.startsWith('paris-');
+}
+
 
 export default function IntroDashboard() {
   const [scatterData, setScatterData] = useState<Point[]>([]);
@@ -166,6 +197,15 @@ export default function IntroDashboard() {
 
   useEffect(() => {
     const currAdjustType = adjustTypeInformation[adjustType];
+		
+    const csvPath = isParisAgreement(adjustType) 
+      ? "/dashboard/data/co2_monthly_average_since_paris_agreement.csv"
+      : "/dashboard/data/co2_monthly_average.csv";
+
+
+    fetchPointsFromCsv(
+      csvPath, "decimal_date", "monthly_average", setScatterData
+    );
 
     fetchPointsFromCsv(
       currAdjustType.adjustDataPath, "decimal_date", "adjusted_prediction", setAdjustData
@@ -264,6 +304,10 @@ export default function IntroDashboard() {
               <MenuItem value="quad">Quadrático</MenuItem>
               <MenuItem value="exp">Exponencial</MenuItem>
               <MenuItem value="geo">Geométrica</MenuItem>
+              <MenuItem value="paris-linear">Paris - Linear</MenuItem>
+              <MenuItem value="paris-log">Paris - Logarítmico</MenuItem>
+              <MenuItem value="paris-pot">Paris - Potência</MenuItem>
+              <MenuItem value="paris-quad">Paris - Quadrático</MenuItem>
             </Select>
           </FormControl>
         </div>
