@@ -17,7 +17,7 @@ const josefinSans = Josefin_Sans({
 
 export default function ExponencialMetodos() {
   return (
-    <main className={`w-full flex flex-col ${josefinSans.className}`}>
+    <main className={`w-full flex-1 flex flex-col ${josefinSans.className}`}>
     {/* Cabeçalho*/}
     <div className="relative h-95 ${iceberg.className}">
       <img

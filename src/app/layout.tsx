@@ -21,7 +21,7 @@ export default function OpeningLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={openSans.className}>
+      <body className={`h-full flex flex-col ${openSans.className}`}>
         {children}
       </body>
     </html>
