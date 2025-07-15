@@ -206,7 +206,7 @@ export default function IntroDashboard() {
   return (
     <main className="w-full flex flex-col fillScreen">
       {/* Cabeçalho*/}
-      <div className={`relative h-95 ${iceberg.className}`}>
+      <div className={`relative h-[300px] md:h-[380px] ${iceberg.className}`}>
         <img
           src="/principal_dashboard.jpeg"
           alt="Cabeçalho da página de dashboard"
