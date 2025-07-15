@@ -74,10 +74,36 @@ export default function ExponencialMetodos() {
             nos resta para mudar a situação do planeta.
           </p>
           <p className="indent-18"> 
-            Existem vários tipos de métodos que podem ser usados para predizer os valores futuros. Os métodos diferem 
-            no tipo de função que é ajustada aos dados (linear, logaritmica, exponencial, etc...). Para a escolha do método
-            que vai fornecer a melhor previsão, é necessário um bom entendimento do problema analisado. Para auxiliar na escolha, há
-            também o cálculo do <Latex>$r^2$</Latex>, que é maior quando o ajuste é melhor.
+            Existem vários tipos de modelos que podem ser usados para predizer os valores futuros. Os modelos diferem 
+            no tipo de função que é ajustada aos dados (linear, logaritmica, exponencial, etc...). Para a escolha do modelo/método
+            que vai fornecer a melhor previsão, é necessário um bom entendimento do problema analisado. Para auxiliar na escolha, um dos
+            critérios considerados para a escolha do ajuste é o cálculo do <Latex>$r^2$</Latex>.
+          </p>
+          <p className="indent-18">
+            O <Latex>$r^2$</Latex> é uma métrica estatística amplamente utilizada para determinar a qualidade de um ajuste.
+            É um valor que varia de 0 a 1, onde um valor próximo de 1 indica que a função se ajusta bem aos dados, enquanto
+            um valor próximo de 0 indica que a função se afasta completamente do comportamento dos dados. 
+            O valor de <Latex>$r^2$</Latex> é calculado da seguinte maneira:
+          </p>
+          <p className="indent-18">
+            <Latex displayMode>
+                {`$$R^2 = \\frac{SQReg}{SQTot} = \\frac{\\sum_1^n (\\overline{y} - g(x_i))^2}{\\sum_1^n (\\overline{y} - y_i)^2}$$`}
+            </Latex>
+          </p>
+          <p className="indent-18">
+            Onde:
+          </p>
+
+          <ul>
+            <li><p><Latex>$y_i$</Latex> - é a coordenada y do ponto i do seu conjunto de pontos.</p></li>
+            <li><p><Latex>$g(x_i)$</Latex> - é a função encontrada aplicada ao valor de x do ponto i do conjunto de pontos.</p></li>
+            <li><p><Latex>$\overline y$</Latex> - é a média da coordenada y do seu conjunto de pontos.</p></li>
+          </ul>
+
+          <p className="indent-18">
+            Lembre-se: Um modelo com um alto <Latex>$r^2$</Latex>, embora se ajuste muito bem aos pontos,
+            não necessariamente representa melhor o comportamento
+            dos dados. Bom senso e conhecimento de causa importam muito mais na análise!
           </p>
           <p className="indent-18"> 
            	As páginas seguintes explicam detalhadamente cada um dos métodos calculados pela nossa equipe. Clique em um dos links
