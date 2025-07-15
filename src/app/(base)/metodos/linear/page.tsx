@@ -36,7 +36,7 @@ export default function ExponencialMetodos() {
     </div>
 
     {/* Texto inicial*/}
-    <div className="relative h-60 mb-6">
+    <div className="relative h-30 mb-6">
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center font-normal gap-6">
         <p className="text-[1.5em] text-[#C63230]">
           AJUSTE LINEAR
@@ -45,7 +45,7 @@ export default function ExponencialMetodos() {
     </div>
 
     {/* Parte do conteúdo */}
-    <div className="relative w-full px-8 py-12 flex justify-center">
+    <div className="relative w-full px-8 pb-8 flex justify-center">
       <div
         className="max-w-4xl text-[1.2em] leading-relaxed space-y-4 "
         style={{ textAlign: "justify" }}

@@ -39,7 +39,7 @@ export default function ExponencialMetodos() {
       </div>
 
       {/* Texto inicial*/}
-      <div className="relative h-60 mb-3">
+      <div className="relative h-30 mb-3">
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center font-normal gap-6">
           <a href="https://github.com/IanGabriel12/calc-num-u3" className="underline text-[1.1em] text-[#89212F] mb-6 mt-12">
             LINK PARA OS CÓDIGOS DOS MÉTODOS
@@ -51,7 +51,7 @@ export default function ExponencialMetodos() {
       </div>
 
       {/* Parte do conteúdo */}
-      <div className="relative w-full px-8 py-8 flex justify-center">
+      <div className="relative w-full p-8 flex justify-center">
         <div
           className="max-w-4xl text-[1.2em] leading-relaxed space-y-4 "
           style={{ textAlign: "justify" }}
