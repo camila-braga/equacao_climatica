@@ -284,6 +284,7 @@ export default function IntroDashboard() {
                 label: 'Ano',
                 tickMinStep: 1,
                 tickMaxStep: 5,
+                valueFormatter: (value) => value.toString(),
               },
             ]}
             yAxis={[
@@ -292,6 +293,7 @@ export default function IntroDashboard() {
                 label: 'Concentração de CO2 (ppm)',
                 tickMinStep: 1,
                 tickMaxStep: 10,
+                max: 500,
               }
             ]}
           >
