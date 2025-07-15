@@ -152,28 +152,64 @@ const adjustTypeInformation: {[key: string] : AdjustType} = {
   },
   "paris-linear": {
     title: "Acordo de Paris - AJuste Linear",
-    description: "",
+    description: (
+      <>
+        <p className="mb-3">O Acordo de Paris é um tratado internacional que visa limitar o aquecimento global abaixo de 2°C, preferencialmente a 1.5°C, em relação aos níveis pré-industriais.</p>
+        <p className="mb-3">O gráfico apresenta as previsões feitas com base nos dados do Acordo, utilizando o método linear descrito anteriormente:</p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.paris_linear.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_linearv2.csv",
     predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_linearv2.csv"
   },
   "paris-log": {
     title: "Acordo de Paris - AJuste Logarítmico",
-    description: "",
+    description: (
+      <>
+        <p className="mb-3">O Acordo de Paris é um tratado internacional que visa limitar o aquecimento global abaixo de 2°C, preferencialmente a 1.5°C, em relação aos níveis pré-industriais.</p>
+        <p className="mb-3">O gráfico apresenta as previsões feitas com base nos dados do Acordo, utilizando o método logarítmico descrito anteriormente:</p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.paris_log.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_logaritmicov2.csv",
     predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_logaritmicav2.csv"
   },
   "paris-pot": {
     title: "Acordo de Paris - AJuste Potência",
-    description: "",
+    description: (
+      <>
+        <p className="mb-3">O Acordo de Paris é um tratado internacional que visa limitar o aquecimento global abaixo de 2°C, preferencialmente a 1.5°C, em relação aos níveis pré-industriais.</p>
+        <p className="mb-3">O gráfico apresenta as previsões feitas com base nos dados do Acordo, utilizando o método de potência descrito anteriormente:</p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.paris_pot.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_potencialv2.csv",
     predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_potencialv2.csv"
   },
 
   "paris-quad": {
     title: "Acordo de Paris - AJuste Quadrático",
-    description: "",
+    description: (
+      <>
+        <p className="mb-3">O Acordo de Paris é um tratado internacional que visa limitar o aquecimento global abaixo de 2°C, preferencialmente a 1.5°C, em relação aos níveis pré-industriais.</p>
+        <p className="mb-3">O gráfico apresenta as previsões feitas com base nos dados do Acordo, utilizando o método quadrático descrito anteriormente:</p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.paris_quad.r2}\$`}</Latex></p>
+      </>
+    ),
     adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_quadraticov2.csv",
     predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_quadraticav2.csv"
+  },
+  "paris-geo": {
+    title: "Acordo de Paris - AJuste Geométrico",
+    description: (
+      <>
+        <p className="mb-3">O Acordo de Paris é um tratado internacional que visa limitar o aquecimento global abaixo de 2°C, preferencialmente a 1.5°C, em relação aos níveis pré-industriais.</p>
+        <p className="mb-3">O gráfico apresenta as previsões feitas com base nos dados do Acordo, utilizando o método geométrico descrito anteriormente:</p>
+        <p><Latex>{`Valor do $r^2$: \$${parameters.paris_geo.r2}\$`}</Latex></p>
+      </>
+    ),
+    adjustDataPath: "/dashboard/adjusts_paris_agreement/ajuste_2016_2025_geometricav2.csv",
+    predictionDataPath: "/dashboard/predictions_paris_agreement/previsoes_2025_2035_geometricav2.csv"
   },
 	
 }
@@ -327,6 +363,7 @@ export default function IntroDashboard() {
               <MenuItem value="paris-log">Paris - Logarítmico</MenuItem>
               <MenuItem value="paris-pot">Paris - Potência</MenuItem>
               <MenuItem value="paris-quad">Paris - Quadrático</MenuItem>
+              <MenuItem value="paris-geo">Paris - Geométrico</MenuItem>
             </Select>
           </FormControl>
         </div>
