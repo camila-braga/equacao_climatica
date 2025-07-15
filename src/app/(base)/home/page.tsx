@@ -146,7 +146,7 @@ export default function Home() {
             <p className="text-base md:text-[1.1em] text-[#C63230] mb-6 indent-6 md:indent-10 text-justify">
               O futuro está em cada linha que sobe e o momento de agir é agora.
             </p>
-            <CustomButton label="Acessar" href="/manifesto" />
+            <CustomButton label="Acessar" href="/dashboard" />
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ export default function Home() {
             <p className="text-base md:text-[1.1em] text-[#C63230] mb-6 indent-6 md:indent-10 text-justify">
               Porque enfrentar a crise climática é uma tarefa coletiva — e começa com quem se importa.
             </p>
-            <CustomButton label="Acessar" href="/metodos" />
+            <CustomButton label="Acessar" href="/about" />
           </div>
         </div>
         <div className="w-full md:w-1/2 h-[400px] md:h-[500px] order-1 md:order-2">
