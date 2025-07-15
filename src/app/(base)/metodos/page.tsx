@@ -22,7 +22,7 @@ export default function ExponencialMetodos() {
   return (
     <main className={`w-full flex flex-col ${josefinSans.className}`}>
       {/* Cabeçalho*/}
-      <div className="relative h-95 ${iceberg.className}">
+      <div className={`relative h-[300px] md:h-[380px] ${iceberg.className}`}>
         <img
           src="/principal_metodos.jpg"
           alt="Cabeçalho da página de métodos exponenciais"
