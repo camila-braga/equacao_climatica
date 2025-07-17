@@ -1,6 +1,6 @@
 'use client';
 import "./page.css"
-import {AllSeriesType, ChartContainer, ChartsGrid, ChartsTooltip, ChartsXAxis, ChartsYAxis, LinePlot, ScatterPlot, ScatterSeriesType} from "@mui/x-charts"
+import {AllSeriesType, ChartContainer, ChartDataProvider, ChartsGrid, ChartsLegend, ChartsSurface, ChartsTooltip, ChartsXAxis, ChartsYAxis, LinePlot, ScatterPlot, ScatterSeriesType} from "@mui/x-charts"
 import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 import Papa from "papaparse";
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
@@ -264,7 +264,7 @@ export default function IntroDashboard() {
       label: 'Ajuste',
       markerSize: 1,
       color: 'black',
-      data: adjustData
+      data: adjustData,
     },
     {
       type: 'scatter',
@@ -311,7 +311,7 @@ export default function IntroDashboard() {
       <div className="md:grid md:grid-rows-4 md:grid-cols-3 border-t gap-3">
         <div className="md:row-span-4 md:col-span-2 pt-6 md:border-r">
           <h2 className="text-[1.5em] text-[#89212F] pl-6 mt-1" >Concentração de CO2 na atmosfera</h2>
-          <ChartContainer
+          <ChartDataProvider
             series={chartSeries}
             height={500}
             xAxis={[
@@ -333,13 +333,16 @@ export default function IntroDashboard() {
               }
             ]}
           >
-            <ScatterPlot/>
 
-            <ChartsXAxis />
-            <ChartsYAxis />
-            <ChartsTooltip trigger="item"/>
-            <ChartsGrid vertical horizontal/>
-          </ChartContainer>
+            <ChartsLegend direction="horizontal"/>
+            <ChartsSurface>
+                <ChartsTooltip trigger="item"/>
+                <ScatterPlot/>
+                <ChartsXAxis />
+                <ChartsYAxis />
+                <ChartsGrid vertical horizontal/>
+            </ChartsSurface>
+          </ChartDataProvider>
         </div>
 
         <div className="pb-6 pt-6 md:pb-0 md:pt-0 border-t md:border-t-0 md:row-span-1 col-span-1 border-b md:flex md:flex-col md:justify-center">
